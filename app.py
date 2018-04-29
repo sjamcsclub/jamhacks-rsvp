@@ -40,9 +40,6 @@ def update_rsvp_status(member_id, status):
             json=payload)
     r.raise_for_status()
 
-    j = r.json()
-    return j["members"][0]["id"]
-
 
 @app.route("/yes/<uniqid>")
 def rsvp_yes(uniqid):
@@ -52,14 +49,18 @@ def rsvp_yes(uniqid):
 
     update_rsvp_status(member_id, "Yes")
 
+    return "Yes"
+
 
 @app.route("/no/<uniqid>")
-def rsvp_yes(uniqid):
+def rsvp_no(uniqid):
     logging.info("NO for uniqid: " + uniqid)
 
     member_id = get_member_by_uniqid(uniqid)
 
     update_rsvp_status(member_id, "No")
+
+    return "No"
 
 
 if __name__ == '__main__':
