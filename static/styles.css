@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css?family=Baloo|Nunito:300,400,600,800");
+
+body {
+  color: white;
+  font: 13pt "Nunito", "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif;
+  line-height: 17.33333pt;
+
+  background-color: #6554be;
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  main {
+    margin: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  #landing-logo {
+    width: 30rem;
+    max-width: 80vw;
+    margin-bottom: 2.5rem; }
+  h2, a {
+    text-align: center;
+    text-shadow: 0 0.25rem 0.2rem rgba(0, 0, 0, 0.5);
+    margin-bottom: 0.75rem; }
+  h2 {
+    font: 400 24pt "Nunito", "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif;
+    margin-bottom: 2.5rem; }
+  a {
+    font-size: 18pt;
+    font-weight: 600;
+    color: #A1D083; }
+  .landing-social-buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    .landing-social-buttons .social-link-icon {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      .landing-social-buttons .social-link-icon img {
+        height: 6rem;
+        width: 6rem;
+        margin: 0rem 1rem 0.25rem; }
+
+
+::-moz-selection {
+  background-color: #7e70c8; }
+
+::selection {
+  background-color: #7e70c8; }

@@ -9,10 +9,12 @@ import os
 
 app = Flask(__name__)
 
+
 MAILCHIMP_API_KEY = os.environ["MAILCHIMP_API_KEY"]
 MAILCHIMP_LIST_ID = os.environ["MAILCHIMP_LIST_ID"]
 
 MAILCHIMP_LIST_URL = "https://us16.api.mailchimp.com/3.0/lists/" + MAILCHIMP_LIST_ID
+
 
 def get_member_by_uniqid(uniqid):
     query = {
@@ -28,10 +30,10 @@ def get_member_by_uniqid(uniqid):
     return j["members"][0]["id"]
 
 
-def update_rsvp_status(member_id, status):
+def update_rsvp(member_id, rsvp):
     payload = {
         "merge_fields": {
-            "RSVPSTATUS": status,
+            "RSVPSTATUS": rsvp
         }
     }
 
@@ -47,9 +49,9 @@ def rsvp_yes(uniqid):
 
     member_id = get_member_by_uniqid(uniqid)
 
-    update_rsvp_status(member_id, "Yes")
+    update_rsvp(member_id, "Yes")
 
-    return "Yes"
+    return render_template("yes.html")
 
 
 @app.route("/no/<uniqid>")
@@ -58,9 +60,9 @@ def rsvp_no(uniqid):
 
     member_id = get_member_by_uniqid(uniqid)
 
-    update_rsvp_status(member_id, "No")
+    update_rsvp(member_id, "No")
 
-    return "No"
+    return render_template("no.html")
 
 
 if __name__ == '__main__':
